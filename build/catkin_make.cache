@@ -1,0 +1,2 @@
+assignment1:question2:question3:question4
+-DPYTHON_EXECUTABLE=/usr/bin/python3 -DCATKIN_DEVEL_PREFIX=/home/minas/Documents/class_2021/ros/robotics_lab/devel -DCMAKE_INSTALL_PREFIX=/home/minas/Documents/class_2021/ros/robotics_lab/install -G Unix Makefiles

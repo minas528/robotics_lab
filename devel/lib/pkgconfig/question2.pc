@@ -1,0 +1,8 @@
+prefix=/home/minas/Documents/class_2021/ros/robotics_lab/devel
+
+Name: question2
+Description: Description of question2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

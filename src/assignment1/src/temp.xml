@@ -1,0 +1,297 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='my_robot'>
+    <static>true</static>
+    <link name='base'>
+      <pose>0 0 0.05 0 -0 0</pose>
+      <visual name='visual_base'>
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry> 
+      </visual>
+      
+      <collision name='collision_base'>
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    
+    <link name='first_arm'>
+      <pose>0 0 0.125 0 -0 0</pose>
+      <visual name='visual_first'>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      
+      <collision name='collision_first'>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>   
+      </collision>
+    </link>
+    
+    <link name='second_arm'>
+      <pose>0 0 1.15 0 0 0</pose>
+      <visual name='visual_second'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      
+      <collision name='collision_second'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2</length>
+          </cylinder>
+        </geometry>   
+      </collision>
+    </link>
+
+    <link name='third_arm'>
+      <pose>0 0 2.65 0 0 0</pose>
+      <visual name='visual_third'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name='collision_third'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>     
+      </collision>
+    </link>
+    
+    <link name='fourth_arm'>
+      <pose>0 0 3.4 0 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.5</length>
+          </cylinder>
+        </geometry>   
+        <pose>0 0 0 0 -0 0</pose>
+      </visual>
+      
+      <collision name='collision_fourth'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.5</length>
+          </cylinder>
+        </geometry>     
+      </collision>
+    </link>
+
+    <joint name='joint1' type='revolute'>
+      <parent>base</parent>
+      <child>first_arm</child>
+      <pose>0 0 -0.025 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <joint name='joint2' type='revolute'>
+      <parent>first_arm</parent>
+      <child>second_arm</child>
+      <pose>0 0 -1 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    
+    <joint name='joint3' type='revolute'>
+      <parent>second_arm</parent>
+      <child>third_arm</child>
+      <pose>0 0 -0.5 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    
+    <joint name='joint4' type='revolute'>
+      <parent>third_arm</parent>
+      <child>fourth_arm</child>
+      <pose>0 0 -0.25 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>
+
+<!-- <?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='my_robot'>
+    <static>true</static>
+    <link name='base'>
+      <pose>0 0 0.05 0 -0 0</pose>
+      <visual name='visual_base'>
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry> 
+      </visual>
+      
+      <collision name='collision_base'>
+        <geometry>
+          <cylinder>
+            <radius>0.5</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    
+    <link name='first_arm'>
+      <pose>0 0 0.09 0 -0 0</pose>
+      <visual name='visual_first'>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 0 0 -0 0</pose>
+      </visual>
+      
+      <collision name='collision_first'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>   
+      </collision>
+    </link>
+    
+    <link name='fourth_arm'>
+      <pose>0 1.5 2 -1.05 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.5</length>
+          </cylinder>
+        </geometry>   
+        <pose>0 0 0 0 -0 0</pose>
+      </visual>
+      
+      <collision name='collision_fourth'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.5</length>
+          </cylinder>
+        </geometry>     
+      </collision>
+    </link>
+    
+    <link name='second_arm'>
+      <pose>0 0.9 0.6 -1.05 0 0</pose>
+      <visual name='visual_second'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      
+      <collision name='collision_second'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2</length>
+          </cylinder>
+        </geometry>   
+      </collision>
+    </link>
+    
+    <link name='third_arm'>
+      <pose>-0.1 1.55 1.5 0.523 -0 0</pose>
+      <visual name='visual_third'>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <collision name='collision_third'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>1</length>
+          </cylinder>
+        </geometry>     
+      </collision>
+    </link>
+    
+    <joint name='joint1' type='revolute'>
+      <parent>base</parent>
+      <child>first_arm</child>
+      <pose>0 0 0.1 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    
+    <joint name='joint2' type='revolute'>
+      <parent>first_arm</parent>
+      <child>second_arm</child>
+      <pose>0 0 -0.03 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    
+    <joint name='joint3' type='revolute'>
+      <parent>second_arm</parent>
+      <child>third_arm</child>
+      <pose>0 0 -0.03 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    
+    <joint name='joint4' type='revolute'>
+      <parent>third_arm</parent>
+      <child>fourth_arm</child>
+      <pose>0 0 -0.03 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf> -->

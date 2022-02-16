@@ -1,0 +1,8 @@
+prefix=/home/minas/Documents/class_2021/ros/robotics_lab/devel
+
+Name: assignment1
+Description: Description of assignment1
+Version: 0.0.0
+Cflags: -I/home/minas/Documents/class_2021/ros/robotics_lab/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
